@@ -1,0 +1,248 @@
+/* RESET */
+* {
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+/* - Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Red (input errors): hsl(0, 100%, 66%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%) 
+*/
+
+body {
+    min-height: 680px;
+    max-height: 900px;
+    min-width: 375px;
+    max-width: 1440px;
+    height: 100vh;
+    width: 100vw;
+}
+
+h6 {
+    color: red;
+}
+
+/* Hiding the Card-added Page */
+.card-not-added {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* ASIDE, CARDINFO BACK AND FRONT */
+
+aside {
+    background-image: url("../images/bg-main-mobile.png");
+    flex-basis: 240px;
+    position: relative;
+}
+
+#section-card-front, #section-card-back {
+    position: absolute;
+    height: 153.45px;
+    width: 240px;
+}
+
+#section-card-front {
+    z-index: 1;
+    top: 50%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: hsl(0, 0%, 100%);
+    background-image: url('../images/bg-card-front.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 15px;    
+}
+
+#card-logo {
+    width: 50px;
+}
+
+#card-number {
+    margin-top: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+#cardholdername-expdate {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+#section-card-back {
+    background-image: url('../images/bg-card-back.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: hsl(0, 0%, 100%);
+    left: 25%;
+    top: 20%;
+    
+}
+
+#cvc {
+    align-self: flex-end;
+    padding: 0px 10% 5px 0px;
+    font-size: 14px;
+    
+}
+
+/* ARTICLE */
+
+article {
+    flex-grow: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 35px auto;
+    padding: 0px 20px;
+    row-gap: 5px;
+    max-width: 450px;
+    color: hsl(278, 68%, 11%) ;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 13px;
+}
+
+#form-cardholdername, #form-cardnumber, #form-month, #form-year, #form-cvc {
+    height: 35px;
+    border: 1px solid hsl(270, 3%, 87%);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+
+}
+
+#separate-date-cvc {
+    display: flex;
+    gap: 10px;
+}
+
+#separate-date, #separate-cvc {
+    width: 100%;
+}
+
+#form-month, #form-year {
+    width: 45%;
+    max-width: 70px;
+    margin-top: 5px;
+}
+
+#separate-cvc {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-cvc {
+    margin-top: 5px;
+}
+
+
+#submit, .card-added > button {
+    height: 50px;
+    background-color: hsl(278, 68%, 11%) ;
+    color: hsl(270, 3%, 87%);
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.card-added {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto 35px auto;
+    padding: 0px 20px;
+    row-gap: 20px;
+}
+
+.card-added > img {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+.card-added > h1 {
+    color: hsl(278, 68%, 11%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+
+.card-added > h4 {
+    color: hsl(0, 0%, 46%);
+}
+
+.card-added > button {
+    width: 100%;
+}
+/* ACTIVE STATES */
+
+form > input:focus {
+    border: solid 1px hsl(278, 68%, 11%);
+}
+
+
+/* + 850PX WIDTH */
+
+@media screen and (min-width:950px) {
+    main {
+        flex-direction: row;
+        
+    }
+
+    #section-card-front, #section-card-back {
+        height: 200px;
+        width: 340px;
+    }
+
+    article {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    form {
+        justify-content: center;
+        padding: 0px;
+        width: 350px;
+    }
+
+    aside {
+        background-image: url("../images/bg-main-desktop.png");
+        flex-basis: 30%;
+    }
+
+    #section-card-front, #section-card-back {
+        left: 35%;
+    }
+}
